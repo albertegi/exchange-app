@@ -13,7 +13,7 @@ import lombok.experimental.SuperBuilder;
 @SuperBuilder
 @Entity
 @Table(name = "_user")
-public class User extends BaseEntity {
+public class UserEntity extends BaseEntity {
     private String firstName;
     private String lastName;
     private String email;
