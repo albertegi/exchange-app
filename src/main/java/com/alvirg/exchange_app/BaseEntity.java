@@ -11,11 +11,7 @@ import java.time.LocalDateTime;
 @Data
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor(access = AccessLevel.PROTECTED)
-// map class with special annotation. It indicates that a class
-// that is mapped to a database table.
-// common properties in the class will be shared by multiple entities
-// This class exists only in the java class and not in the
-// database
+
 @SuperBuilder
 @MappedSuperclass
 public abstract class BaseEntity {
@@ -32,3 +28,9 @@ public abstract class BaseEntity {
 
     private String lastModifiedBy;
 }
+
+// map class with special annotation. It indicates that a class
+// that is mapped to a database table.
+// common properties in the class will be shared by multiple entities
+// This class exists only in the java class and not in the
+// database
