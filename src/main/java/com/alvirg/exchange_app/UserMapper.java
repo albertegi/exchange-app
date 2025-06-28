@@ -1,7 +1,10 @@
 package com.alvirg.exchange_app;
 
+import org.springframework.stereotype.Service;
+
 import java.time.LocalDateTime;
 
+@Service
 public class UserMapper {
 
     public static UserEntity fromCreateDto(CreateUserDTO dto){

@@ -1,5 +1,8 @@
 package com.alvirg.exchange_app;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public class ListingMapper {
 
     public static ListingEntity fromCreateListingDTO(CreateListingDTO dto){
