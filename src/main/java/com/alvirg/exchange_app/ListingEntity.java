@@ -1,6 +1,8 @@
 package com.alvirg.exchange_app;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
@@ -12,12 +14,21 @@ import lombok.experimental.SuperBuilder;
 @SuperBuilder
 @Entity
 public class ListingEntity extends BaseEntity{
+
     private String name;
     private String description;
     private String condition;
     private int quantity;
     private String imageUrl;
     private boolean visible;
-    private int userId;
-    private int categoryId;
+
+    // owner of the relationship
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private UserEntity userEntity;
+
+    @ManyToOne
+    @JoinColumn(name = "listing_id")
+    private CategoryEntity category;
+
 }

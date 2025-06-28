@@ -1,8 +1,6 @@
 package com.alvirg.exchange_app;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -23,11 +21,11 @@ public class TradeEntity extends BaseEntity {
     @Enumerated(EnumType.STRING)
     private TradeStatus status;
 
-//    @ManyToOne
-//    @JoinColumn(name = "offeror_listing_id")
-//    private ListingEntity offerorListing;
-//
-//    @ManyToOne
-//    @JoinColumn(name = "offeree_listing_id")
-//    private ListingEntity offereeListing;
+    @ManyToOne
+    @JoinColumn(name = "offeror_listing_id")
+    private ListingEntity offerorListing;
+
+    @ManyToOne
+    @JoinColumn(name = "offeree_listing_id")
+    private ListingEntity offereeListing;
 }

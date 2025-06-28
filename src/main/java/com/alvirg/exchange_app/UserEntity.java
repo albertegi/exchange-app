@@ -1,9 +1,13 @@
 package com.alvirg.exchange_app;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
+
+import java.util.List;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
@@ -18,4 +22,7 @@ public class UserEntity extends BaseEntity {
     private String lastName;
     private String email;
     private String password;
+
+    @OneToMany(mappedBy = "userEntity", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<ListingEntity> listings;
 }
