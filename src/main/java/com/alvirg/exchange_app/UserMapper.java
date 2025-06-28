@@ -1,5 +1,7 @@
 package com.alvirg.exchange_app;
 
+import java.time.LocalDateTime;
+
 public class UserMapper {
 
     public static UserEntity fromCreateDto(CreateUserDTO dto){
@@ -14,7 +16,30 @@ public class UserMapper {
         userEntity.setPassword(dto.getPassword());
 
         return userEntity;
+    }
 
+    public static UserEntity fromUpdateUserDto(UpdateUserDTO dto, UserEntity existing){
+        if(dto == null && existing == null) return existing;
+
+        existing.setLastName(dto.getFirstName());
+        existing.setLastName(dto.getLastName());
+        existing.setEmail(dto.getEmail());
+
+        return existing;
+    }
+
+    public static UserResponseDTO toUserResponseDTO(UserEntity userEntity){
+
+        if(userEntity == null){
+            return null;
+        }
+
+        UserResponseDTO dto = new UserResponseDTO();
+        dto.setId(userEntity.getId());
+        dto.setFirstName(userEntity.getFirstName());
+        dto.setLastName(userEntity.getLastName());
+        dto.setEmail(userEntity.getEmail());
+        return dto;
 
     }
 }
