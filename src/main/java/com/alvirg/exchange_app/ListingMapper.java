@@ -17,4 +17,33 @@ public class ListingMapper {
 
         return listingEntity;
     }
+
+    public static ListingEntity fromUpdateDto(UpdateListingDTO dto, ListingEntity existing) {
+        if (dto == null || existing == null) return existing;
+
+        existing.setName(dto.getName());
+        existing.setDescription(dto.getDescription());
+        existing.setCondition(dto.getCondition());
+        existing.setQuantity(dto.getQuantity());
+        existing.setImageUrl(dto.getImageUrl());
+        existing.setVisible(dto.isVisible());
+        return existing;
+    }
+
+    public static ListingResponseDTO toResponseDto(ListingEntity entity) {
+        if (entity == null) return null;
+
+        ListingResponseDTO dto = new ListingResponseDTO();
+        dto.setId(entity.getId());
+        dto.setName(entity.getName());
+        dto.setDescription(entity.getDescription());
+        dto.setCondition(entity.getCondition());
+        dto.setQuantity(entity.getQuantity());
+        dto.setImageUrl(entity.getImageUrl());
+        dto.setVisible(entity.isVisible());
+        dto.setUserId(entity.getId());
+        dto.setCategoryId(entity.getId());
+        return dto;
+    }
+
 }
