@@ -11,6 +11,7 @@
 /Users/albertegi/spring-projects/exchange-app/src/main/java/com/alvirg/exchange_app/ListingResponseDTO.java
 /Users/albertegi/spring-projects/exchange-app/src/main/java/com/alvirg/exchange_app/ListingService.java
 /Users/albertegi/spring-projects/exchange-app/src/main/java/com/alvirg/exchange_app/ListingShortDTO.java
+/Users/albertegi/spring-projects/exchange-app/src/main/java/com/alvirg/exchange_app/SecurityConfig.java
 /Users/albertegi/spring-projects/exchange-app/src/main/java/com/alvirg/exchange_app/TradeDTO.java
 /Users/albertegi/spring-projects/exchange-app/src/main/java/com/alvirg/exchange_app/TradeEntity.java
 /Users/albertegi/spring-projects/exchange-app/src/main/java/com/alvirg/exchange_app/TradeMapper.java
