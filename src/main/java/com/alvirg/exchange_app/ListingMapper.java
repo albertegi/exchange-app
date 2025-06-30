@@ -33,7 +33,7 @@ public class ListingMapper {
         return existing;
     }
 
-    public static ListingResponseDTO toResponseDto(ListingEntity entity) {
+    public ListingResponseDTO toResponseDto(ListingEntity entity) {
         if (entity == null) return null;
 
         ListingResponseDTO dto = new ListingResponseDTO();

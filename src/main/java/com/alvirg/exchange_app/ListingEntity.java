@@ -25,7 +25,7 @@ public class ListingEntity extends BaseEntity{
     // owner of the relationship
     @ManyToOne
     @JoinColumn(name = "user_id")
-    private UserEntity userEntity;
+    private UserEntity user;
 
     @ManyToOne
     @JoinColumn(name = "listing_id")

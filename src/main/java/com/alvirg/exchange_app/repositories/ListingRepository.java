@@ -8,8 +8,10 @@ import java.util.List;
 
 
 public interface ListingRepository extends JpaRepository<ListingEntity, Integer> {
-    List<ListingEntity> findByOwnerId(Integer id);
+    List<ListingEntity> findByUserId(Integer id);
     List<ListingEntity> findByCategoryId(Integer id);
+
+
 
 
 }
