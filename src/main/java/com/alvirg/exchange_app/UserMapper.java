@@ -24,7 +24,7 @@ public class UserMapper {
     public static UserEntity fromUpdateUserDto(UpdateUserDTO dto, UserEntity existing){
         if(dto == null && existing == null) return existing;
 
-        existing.setLastName(dto.getFirstName());
+        existing.setFirstName(dto.getFirstName());
         existing.setLastName(dto.getLastName());
         existing.setEmail(dto.getEmail());
 

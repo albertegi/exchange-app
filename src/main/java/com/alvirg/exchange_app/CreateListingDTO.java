@@ -1,8 +1,6 @@
 package com.alvirg.exchange_app;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Data
 @NoArgsConstructor
@@ -16,4 +14,5 @@ public class CreateListingDTO {
     private boolean visible;
     private int userId;
     private int categoryId;
+
 }

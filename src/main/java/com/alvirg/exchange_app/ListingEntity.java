@@ -8,9 +8,8 @@ import lombok.experimental.SuperBuilder;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
-@NoArgsConstructor(access = AccessLevel.PUBLIC)
-@AllArgsConstructor(access = AccessLevel.PUBLIC)
-@RequiredArgsConstructor
+@NoArgsConstructor
+@AllArgsConstructor
 @SuperBuilder
 @Entity
 public class ListingEntity extends BaseEntity{

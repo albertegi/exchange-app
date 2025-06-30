@@ -28,7 +28,7 @@ public class ListingService {
         CategoryEntity category = categoryRepository.findById(dto.getCategoryId())
                 .orElseThrow(()-> new EntityNotFoundException("Category not found!"));
 
-        ListingEntity listing = ListingMapper.fromCreateListingDTO(dto);
+        ListingEntity listing = listingMapper.fromCreateListingDTO(dto);
 
         // Sets the foreign key relationships: the listing is now associated with a user and a category
         listing.setUser(user);

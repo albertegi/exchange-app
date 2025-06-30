@@ -5,23 +5,22 @@ import org.springframework.stereotype.Service;
 @Service
 public class ListingMapper {
 
-    public static ListingEntity fromCreateListingDTO(CreateListingDTO dto){
+    public ListingEntity fromCreateListingDTO(CreateListingDTO dto){
         if(dto == null) return null;
 
-        var listingEntity = new ListingEntity();
+        ListingEntity listingEntity = new ListingEntity();
         listingEntity.setName(dto.getName());
         listingEntity.setDescription(dto.getDescription());
         listingEntity.setCondition(dto.getCondition());
         listingEntity.setQuantity(dto.getQuantity());
         listingEntity.setImageUrl(dto.getImageUrl());
         listingEntity.setVisible(dto.isVisible());
-        listingEntity.setId(dto.getUserId());
-        listingEntity.setId(dto.getCategoryId());
+
 
         return listingEntity;
     }
 
-    public static ListingEntity fromUpdateDto(UpdateListingDTO dto, ListingEntity existing) {
+    public ListingEntity fromUpdateDto(UpdateListingDTO dto, ListingEntity existing) {
         if (dto == null || existing == null) return existing;
 
         existing.setName(dto.getName());
@@ -44,8 +43,13 @@ public class ListingMapper {
         dto.setQuantity(entity.getQuantity());
         dto.setImageUrl(entity.getImageUrl());
         dto.setVisible(entity.isVisible());
-        dto.setUserId(entity.getId());
-        dto.setCategoryId(entity.getId());
+
+        dto.setUserId(entity.getUser().getId());
+        dto.setCategoryId(entity.getCategory().getId());
+
+//        dto.setUserId(entity.getId());
+//        dto.setCategoryId(entity.getId());
+
         return dto;
     }
 

@@ -11,9 +11,8 @@ import java.util.List;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
-@NoArgsConstructor(access = AccessLevel.PUBLIC)
-@AllArgsConstructor(access = AccessLevel.PUBLIC)
-@RequiredArgsConstructor
+@NoArgsConstructor
+@AllArgsConstructor
 @SuperBuilder
 @Entity
 @Table(name = "_user")
