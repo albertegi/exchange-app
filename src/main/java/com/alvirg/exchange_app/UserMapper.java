@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
 @Service
 public class UserMapper {
 
-    public static UserEntity fromCreateDto(CreateUserDTO dto){
+    public UserEntity fromCreateDto(CreateUserDTO dto){
         if(dto == null){
             throw new NullPointerException("User dto should not be null");
         }
@@ -21,7 +21,7 @@ public class UserMapper {
         return userEntity;
     }
 
-    public static UserEntity fromUpdateUserDto(UpdateUserDTO dto, UserEntity existing){
+    public  UserEntity fromUpdateUserDto(UpdateUserDTO dto, UserEntity existing){
         if(dto == null && existing == null) return existing;
 
         existing.setFirstName(dto.getFirstName());
@@ -31,7 +31,7 @@ public class UserMapper {
         return existing;
     }
 
-    public static UserResponseDTO toUserResponseDTO(UserEntity userEntity){
+    public UserResponseDTO toUserResponseDTO(UserEntity userEntity){
 
         if(userEntity == null){
             return null;
